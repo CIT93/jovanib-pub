@@ -1,3 +1,56 @@
+let cardonFootprintPoints = 0;
+
+function determineHouseSizePts(size) {
+  
+  let HouseSizePoints = 0;
+  if (size === "large") {
+    HouseSizePoints = 10;
+  } else if (size === "meduim") {
+    HouseSizePoints = 6;
+  } else if (size === "small") {
+    HouseSizePoints = 4;
+  } else if (size === "apt") {
+    HouseSizePoints = 2;
+  }
+  return HouseSizePoints;
+}
+
+function determineHouseHoldPts(numberInHousehold) {
+  
+  let HouseHoldPts = 0;
+  if (numberInHousehold === 1) {
+    HouseHoldPts = 14;
+  } else if (numberInHousehold === 2) {
+    HouseHoldPts = 12;
+  } else if (numberInHousehold === 3) {
+    HouseHoldPts = 10;
+  } else if (numberInHousehold === 4) {
+    HouseHoldPts = 8;
+  } else if (numberInHousehold === 5) {
+    HouseHoldPts = 6;
+  } else if (numberInHousehold === 6) {
+    HouseHoldPts = 4;
+  } else if (numberInHousehold > 6) {
+    HouseHoldPts = 2;
+  }
+  
+  return HouseHoldPts;
+}
+
+function start(houseHoldMembers, houseHoldSize) {
+  const HouseHoldPTS = determineHouseHoldPts(houseHoldMembers);
+  const houseSizePTS = determineHouseSizePts(houseHoldSize);
+  const total = HouseHoldPTS + houseSizePTS;
+  cfpData.push([
+    houseHoldMembers,
+    houseHoldSize,
+    HouseHoldPTS,
+    houseSizePTS,
+    total]
+  );
+  
+  
+}
 function displayoutput() {
     for (arr of cfpData) 
     {
@@ -14,3 +67,28 @@ function displayoutput() {
     output.appendChild(newP);
 }
 }
+start(5, "apt");
+start(4, "large");
+start(3, "medium");
+
+ 
+displayOutPut()
+
+// for (initialization; condition; afterthought) 
+// statement
+
+for (let i = 0; i < 5; i++) {
+    // block scope
+    console.log(i)
+}
+// challenge 
+for (let i = 0; i <= 15; i++) {
+   
+    console.log(i)
+}
+// count back
+for (let i = 6; i > 0; i--) {
+   
+    console.log(i)
+}
+// refactor
