@@ -43,29 +43,37 @@ function determineHouseHoldPts(numberInHousehold) {
 
 function start(houseHoldMembers, houseHoldSize) {
   const HouseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-  const houseSizePts = determineHouseSizePts(houseHoldSize);
-  const total = HouseHoldPTS + houseSizePts;
-  cfpData.push(
+  const houseSizePTS = determineHouseSizePts(houseHoldSize);
+  const total = HouseHoldPTS + houseSizePTS;
+  cfpData.push([
     houseHoldMembers,
     houseHoldSize,
     HouseHoldPTS,
-    houseSizePts,
-    total
+    houseSizePTS,
+    total]
   );
   
   
 }
  
 function displayOutPut() {
-  
+for (arr of cfpData){
+console.log(arr);
+const output = document.getElementById("output")
+
+const newP = document.createElement("p");
+newP.textContent = `Carbon footprint total is ${arr[4]} number of household members is ${arr[0]}, score for house members is 
+${arr[2]}, house hold size ${arr[1]}, score for house size is ${arr[3]}`;
+output.appendChild(newP);
+
+
+} 
 }
 
-start([5, "apt"]);
-start([5, "apt"])
-start(3, "medium")
-start([8, "apt"]);
-start([2, "apt"])
-start(4, "medium")
+start(5, "apt");
+start(4, "large");
+start(3, "medium");
+
  
 displayOutPut()
 
