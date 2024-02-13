@@ -2,7 +2,6 @@ const cfpData = [];
 let cardonFootprintPoints = 0;
 
 function determineHouseSizePts(size) {
-  
   let HouseSizePoints = 0;
   if (size === "large") {
     HouseSizePoints = 10;
@@ -17,7 +16,6 @@ function determineHouseSizePts(size) {
 }
 
 function determineHouseHoldPts(numberInHousehold) {
-  
   let HouseHoldPts = 0;
   if (numberInHousehold === 1) {
     HouseHoldPts = 14;
@@ -34,42 +32,49 @@ function determineHouseHoldPts(numberInHousehold) {
   } else if (numberInHousehold > 6) {
     HouseHoldPts = 2;
   }
-  
+
   return HouseHoldPts;
+}
+
+function displayOutObj(obj) {
+  console.log(obj);
+  const output = document.getElementById("output");
+  const newH2 = document.createElement("h2");
+  newH2.textContent = `Cardon Footprint ${obj.cfpTotal}`;
+  output.appendChild(newH2);
 }
 
 function start(houseHoldMembers, houseHoldSize) {
   const HouseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseHoldSize);
   const total = HouseHoldPTS + houseSizePTS;
-  cfpData.push([
-    houseHoldMembers,
-    houseHoldSize,
-    HouseHoldPTS,
-    houseSizePTS,
-    total]
-  );
-  
-  
+  cfpData.push({
+    houseH: houseHoldMembers,
+    houseS: houseSize,
+    houseMPTS: houseHoldPTS,
+    houseSPTS: houseSizePTS,
+    cfpTotal: total,
+  });
 }
-/* function displayoutput() {
-    for (arr of cfpData) 
-    {
+console.log(obj)
+ function displayoutput() {
+    for (obj of cfpData) {
+    console.log(obj)
     const output = document.getElementById("output");
     const newH2 = document.createElement("h2");
-    newH2. textContent = `Cardon Footprint ${arr[4]}`;
-    const newH3 = document.createElement("h3");
-    newH3.textContent = 'Based on number in and size of home'
-    const newP = document.createElement("p");
-    newP.textContent = `This number is based on the number of people in the house of ${arr [0]} (score: ${arr[3]}),`;
-    newP.textContent += `and a $arr[1]) size of home (score:${arr[2]}).`;
+    newH2. textContent = `Cardon Footprint ${obj.cfpTotal}`;
+    // const newH3 = document.createElement("h3");
+    //newH3.textContent = 'Based on number in and size of home'
+    //const newP = document.createElement("p");
+    //newP.textContent = `This number is based on the number of people in the house of ${arr [0]} (score: ${arr[3]}),`;
+    //newP.textContent += `and a $arr[1]) size of home (score:${arr[2]}).`;
     output.appendChild(newH2);
-    output.appendChild(newH3);
-    output.appendChild(newP);
-}
-} */
+    // output.appendChild(newH3);
+    //output.appendChild(newP);
+    }
+} 
 
-function displayoutput() {
+/* function displayoutput() {
 
     for (let i = 0; i < cfpData.length; i++) {
     console.log(i)
@@ -86,28 +91,10 @@ function displayoutput() {
     //output.appendChild(newP); 
 }
 }
-
+*/
 start(5, "apt");
 start(4, "large");
 start(3, "medium");
+start(2, "small")
 
-displayoutput()
-// for (initialization; condition; afterthought) 
-// statement
-
-for (let i = 0; i < 5; i++) {
-    // block scope
-    console.log(i)
-}
-// challenge 
-for (let i = 0; i <= 15; i++) {
-   
-    console.log(i)
-}
-// count back
-for (let i = 6; i > 0; i--) {
-   
-    console.log(i)
-}
-// refactor
-// ^^^
+displayOutput()
