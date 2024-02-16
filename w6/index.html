@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="main.js"></script>
+    <title>W6 </title>
+    <style>
+        html {
+            font-size: 22px;
+        }
+
+        body {
+            background-color: rgb(0, 140, 255);
+            color: rgb(56, 56, 56);
+        }
+        input:in-range { background-color: aqua;}
+        input:out-of-range{ background-color: greenyellow;}
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        
+        <fieldset>
+            <legend>Calculating ur carbon footprint pts </legend>
+            <div>
+                <label for="">First name:</label>
+                <input type="text" name="firstname" required>
+            </div>
+            <div>
+                <label for="">Last name:</label>
+                <input type="text" name="lastname" required>
+            </div>
+            <div>
+                <label for=""># of house members:</label>
+                <input type="number" name="housem" min="1" max="6" required>
+            </div>
+            <div>
+                <label for="">size of house:</label>
+               <!-- <input type="text" name="houses" required> -->
+                <select name="houses" required>
+                    <option value="">--Pls enter sz of home--</option>
+                    <option value="apt">apt</option>
+                    <option value="medium">medium</option>
+                    <option value="large">large</option>
+                </select>
+
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+
+    </form>
+    <div id="output">
+
+    </div>
+
+</body>
+
+</html>
