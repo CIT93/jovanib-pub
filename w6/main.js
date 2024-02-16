@@ -37,11 +37,13 @@ function determineHouseHoldPts(numberInHousehold) {
   return houseHoldPts;
 }
 
-function start(houseHoldMembers, houseHoldSize) {
+function start(firstName, lastName,houseHoldMembers, houseHoldSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseHoldSize);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
+    firstName: firstName,
+    lastName: lastName,
     houseH: houseHoldMembers,
     houseSPTS: houseSizePTS,
     houseS: houseHoldSize,
@@ -56,7 +58,7 @@ function displayOutput() {
     const newH3 = document.createElement("h3");
     newH3.textContent = "Based on number in and size of home";
     const newP = document.createElement("p");
-    newP.textContent = `This number is based on the number of people in a house of ${obj.houseH} (score: ${obj.houseSPTS}). House size: ${obj.houseS}`;
+    newP.textContent = `Name: ${obj.firstName} ${obj.lastName}. This number is based on the number of people in a house of ${obj.houseH} (House score: ${obj.houseSPTS}). House size: ${obj.houseS}`;
     OUTPUT.appendChild(newH2);
     OUTPUT.appendChild(newH3);
     OUTPUT.appendChild(newP);
@@ -70,7 +72,7 @@ FORM.addEventListener('submit', function(e) {
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
-  start(houseMembers, houseSize);
+  start(firstName, lastName, houseMembers, houseSize);
   OUTPUT.innerHTML = "";
   displayOutput();
   FORM.reset();
