@@ -35,7 +35,11 @@ console.log(e);
 data.splice(index, 1);
 renderTbl(data);
   });
-  btnEdit.addEventListener('click', function(e){})
+  btnEdit.addEventListener('click', function(e){
+    console.log("helloo from edit btn");
+    console.log(e);
+  
+  })
   return td;
 }
 
@@ -62,10 +66,11 @@ function renderTblBody(data){
 }
 function renderTbl(data) {
 TBL.innerHTML = "";
+if (data.length > 0){
   const tbody = renderTblBody(data);
   const table = renderTblHeading();
   table.appendChild(tbody);
-  TBL.appendChild(table);
+  TBL.appendChild(table); }
 }
 
 export { renderTbl, renderTblHeading };
