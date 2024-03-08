@@ -25,7 +25,7 @@ FORM.addEventListener('submit', function(e) {
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
-  start(firstName, lastName, houseMembers, houseSize); // Pass all four arguments to start function
+  start(firstName, lastName, houseMembers, houseSize);
   OUTPUT.innerHTML = "";
   renderTbl(cfpData);
   FORM.reset();
