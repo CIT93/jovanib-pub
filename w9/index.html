@@ -5,8 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module"  src="main.js" ></script>
-    <title>W8</title>
+    <title>W9</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .error {
+          color: red;
+      }
+  </style>
   </head>
 
   <body>
@@ -15,11 +20,13 @@
         <legend>Calculating ur carbon footprint pts</legend>
         <div>
           <label for="">First name:</label>
-          <input type="text" name="firstname"  />
+          <input type="text" name="firstname"  id="firstName"/>
+          <span id="firstNameError" class="error" ></span>
         </div>
         <div>
           <label for="">Last name:</label>
-          <input type="text" name="lastname"  />
+          <input type="text" name="lastname" id="lastName" />
+          <span id="lastNameError" class="error" ></span>
         </div>
         <div>
           <label for=""># of house members:</label>
@@ -61,5 +68,35 @@
         </tr>
       </tbody>
     </table> -->
+    <script>
+      // Function to validate a single field
+      const validateField = event => {
+          const field = event.target.value;
+          const fieldId = event.target.id;
+          const fieldError = document.getElementById(`${fieldId}Error`);
+
+          if (field === '') {
+              fieldError.textContent = `${fieldId} is required`;
+              event.target.classList.add('invalid');
+          } else {
+              fieldError.textContent = '';
+              event.target.classList.remove('invalid');
+          }
+      };
+         // Attach blur event listeners
+         document.getElementById('firstName').addEventListener('blur', validateField);
+        document.getElementById('lastName').addEventListener('blur', validateField);
+        
+        // Listen for form submission
+        document.getElementById('form').addEventListener('submit', function (event) {
+            //Prevent default behavior
+            event.preventDefault();
+            const firstNameIsValid = document.getElementById('firstName').value !== '';
+            const lastNameIsValid = document.getElementById('lastName').value !== '';
+            if (firstNameIsValid && lastNameIsValid) {
+                alert('Form is valid. You can proceed with submitting the form to the server.');
+            }
+        });
+      </script>
   </body>
 </html>
