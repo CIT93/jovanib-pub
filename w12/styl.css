@@ -1,0 +1,10 @@
+html{
+    background-color: rgb(255, 162, 0);
+   
+}
+div{
+    color: rgb(0, 0, 0);
+border-width: .5px;
+}
+input:in-range { background-color: rgb(30, 255, 0);}
+input:out-of-range{ background-color: rgb(255, 47, 47);}
