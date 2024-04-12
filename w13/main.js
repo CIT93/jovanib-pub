@@ -17,7 +17,6 @@ const stopExercise = (exercise, messageDiv) => {
     return Promise.reject("Exercise  is not defined");
   }
 };
-
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const exercise = document.getElementById("exercise").value;
@@ -41,7 +40,10 @@ form.addEventListener("submit", function (event) {
           .catch((error) => {
             console.log( "An error occurred.")
           });
-  } else {
-      console.log("Please fill out the form.");
-  }
+
+      // Clear form
+      document.getElementById("exercise").value = "";
+      document.getElementById("sets").value = "";
+      document.getElementById("time").value = "";
+        }
 });
