@@ -23,7 +23,7 @@ console.log(result.properties.periods[1].shortForecast)
 
  async function start() {
     try{
-        const data = await fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
+        const data = await fetch('https://api.weather.gov/gridpoints/HNX/52,100/forecast')
         const result =  await data.json();
         onSuccess(result.properties.periods[1].shortForecast)
     } catch (e) {
