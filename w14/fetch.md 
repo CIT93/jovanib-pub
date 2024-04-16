@@ -1,0 +1,20 @@
+--NOTES--
+1. send requests to api
+2. pass url to function to locate
+3. any public api
+4. fetch return response obj
+5. fetch and recieve a response
+6. request obj and reponse obj
+7. fetch is async operation to server
+8. returns promise
+9.  tokens needed to know who u are
+10. almost like a password
+11. use for limits
+12. not really free
+13. api need headers
+14.  Catch block doesnt handle error bc it's considered success
+15. fetch failed
+16. post submit forms
+17. fetch uses native support
+18. fetcn doesnt need to install
+10. fetch uses modern feature and syntax

@@ -1,40 +1,22 @@
-/* async function start() {
-const data = await fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
-const result =  await data.json()
-console.log(result.properties.periods[1].shortForecast)
- }
+const url = ''
 
- async function start2() {
- fetch('https://api.weather.gov/gridpoints/OKX/35,35/forecast')
-   .then(data => data.json() )
-   .then( result => {
-    console.log(result.properties.periods[1].shortForecast)
-     })
-     }
- start() */
- 
- /* function getData() {
-    return new Promise(function(resolve, reject) {
-        setTimeout(() => {
-            reject('Something went wrong.')
-        }, 1)
+    const request = new Request(url,{
+         headers: {
+        'Authorization': 'Bearer 123'
+    }
     })
- } */
-
- async function start() {
-    try{
-        const data = await fetch('https://api.weather.gov/gridpoints/HNX/52,100/forecast')
-        const result =  await data.json();
-        onSuccess(result.properties.periods[1].shortForecast)
-    } catch (e) {
-onError(e);
+ async function getData(){
+    try {
+        const response = await fetch(request)
+        if (response.status === 200) {
+            const data = await response.json() 
+        console.log('Succes', data)
+        } else {
+            console.log(' Servererror', data.error.message)
+        }
+         } catch(error){
+        console.log('Fetch error', error)
     }
-    }
- function onSuccess(result){
-console.log(`Success: $(result`)
+ 
 }
-function onError(err){
-console.log(`Error: $(err`)
-} 
-
- start()
+ getData()
