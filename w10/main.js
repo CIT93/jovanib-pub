@@ -25,7 +25,7 @@ const start = (...input) => {
     firstName: input[0],
     lastName: input[1],
     houseHold: input[2],
-    houseSPTS: input[3 ],
+    houseSPTS: input[3],
     houseSize: houseHoldSize,
     cfpTotal: total,
   });
