@@ -11,12 +11,17 @@ const renderPics = (photos) => {
 
 const start = async () => {
     try {
-        const pics = await fetch(link);       
-        const photoData = await pics.json();    
+        const pics = await fetch(link);
+        if (pics.status < 200) {
+            throw console.log("HTTP error. ");
+        }
+        const photoData = await pics.json();
+        if (!('length' in photoData)) {
+            throw console.log("Data error.");
+        }
         renderPics(photoData);
     } catch(error) {
-        output.textContent = "Error";       
+        output.textContent = `Error`;
     }
-
 }
 start();
