@@ -1,6 +1,6 @@
 const form = document.getElementById("form")
  const listener = addEventListener("submit", function (event) {
-    event.preventDefault();
+   event.preventDefault();
     const exercise = document.getElementById("exercise").value;
     const sets = document.getElementById("sets").value;
     const time = document.getElementById("time").value;

@@ -1,0 +1,27 @@
+html {
+    font-size: 22px;
+   
+      
+}
+
+body {
+    background-color:moccasin;
+    color: goldenrod;
+   
+}
+input:in-range { background-color: gold;}
+input:out-of-range{ background-color: rgb(255, 0, 0);}
+table, th, td {
+border: 1px solid;
+padding: 5px;
+
+}
+
+table th { background-color: moccasin;}
+table tr:nth-child(even) { background-color:white}
+
+
+
+button:hover {
+    background-color: gold;
+}

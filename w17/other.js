@@ -1,4 +1,4 @@
-const cardonFootprintPoints = 0;
+let cardonFootprintPoints = 0;
 
 const determineHouseSizePoints = function(size) {
   let houseSizePoints = 0;

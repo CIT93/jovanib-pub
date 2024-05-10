@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="main.js"></script>
+    <title>W17</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="form">
+      <fieldset>
+        <legend>Calculating ur carbon footprint pts</legend>
+        <div>
+          <label for="">First name:</label>
+          <input type="text" name="firstname" id="firstName" />
+          <span id="firstNameError" class="error"></span>
+        </div>
+        <div>
+          <label for="">Last name:</label>
+          <input type="text" name="lastname" id="lastName" />
+          <span id="lastNameError" class="error"></span>
+        </div>
+        <div>
+          <label for=""># of house members:</label>
+          <input type="number" name="housem" min="1" max="6" required />
+        </div>
+        <div>
+          <label for="">size of house:</label>
+
+          <select name="houses" required>
+            <option value="">--Pls enter sz of home--</option>
+            <option value="apt">apt</option>
+            <option value="medium">medium</option>
+            <option value="large">large</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="">Evaluate your food choice</label>
+          <select name="foodChoice" id="foodChoice">
+            <option value="">--Choose--</option>
+            <option value="meat daily">Meat on a daily basis</option>
+            <option value="meat weekly">Meat a few times per week</option>
+            <option value="vegetarian">I am a vegetarian</option>
+            <option value="vegan">I am a vegan or only eat wild meat</option>
+          </select>
+        </div>
+        
+        <div>
+          <label >Evaluate your food choices?</label>
+          <select name="foodSource" required>
+            <option value="">Choose One</option>
+            <option value="packed">prepackaged convenience food</option>
+            <option value="balance">good balance of fresh and convenience food</option>
+            <option value="local">locally grown, or hunted food</option>
+          </select>
+        </div>
+
+        <div>
+          <label >Examine your water consumption. You use your dish washer or washing machine:</label>
+          <select name="water"  id="water" required>
+            <option value="">Choose One</option>
+            <option value="3">More than 9 times per week</option>
+            <option value="2">4 to 9 times</option>
+            <option value="1">1 to 3 times</option>
+            <option value="0">Dnt have dishwasher</option>
+          </select>
+          <br>
+            <label for="dish_washer">If you have both a dishwasher and a washing machine, check this box:</label>
+            <input type="checkbox" name="dish_washer" id="both" checked>
+        </div>
+
+        <div>
+          <label>Determine your household purchases</label>
+          <select name="purchases" required>
+            <option value="">---Yearly purchases---</option>
+            <option value="10">If you buy more than 7 new pieces of furniture, electronics, or other household gadgets</option>
+            <option value="8">If you purchase between 5 and 7 items</option>
+            <option value="6">If you purchase between 3 and 5 items</option>
+            <option value="4">If you purchase less than 3 items</option>
+            <option value="2">If you purchase almost nothing or only secondhand items</option>
+          </select>
+        </div>
+
+        <div>
+          <label>Consider how much waste you produce.</label>
+          <select id="waste" name="waste">
+              <option value="">----Count up how many times you fill your garbage cans each week----</option>
+              <option value="50">4</option>
+              <option value="40">3</option>
+              <option value="30">2</option>
+              <option value="20">1</option>
+              <option value="5">Less than 1</option>
+          </select> 
+      </div>
+
+      <fieldset>
+        <legend>Identify the amount of waste that you recycle</legend>
+ <label>
+  <input type="checkbox" class="recycle" id="glass" name="glass" value="glass"/>Glass
+ </label>
+ <label>
+  <input type="checkbox" class="recycle" id="plastic" name="plastic" value="plastic"/>Plastic
+ </label>
+ <label>
+  <input type="checkbox" class="recycle" id="paper" name="paper" value="paper"/>Paper
+ </label>
+ <label>
+  <input type="checkbox" class="recycle" id="alum" name="alum" value="alum"/>Alum
+ </label>
+ <label>
+  <input type="checkbox" class="recycle" id="steel" name="steel" value="steel"/>Steel
+ </label>
+ <label>
+  <input type="checkbox" class="recycle" id="foodwaste" name="foodwaste" value="foodwaste"/>Food waste (composting)
+ </label>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>Tally up your annual transportation scores. </legend>
+      <div>
+          <label>Personal vehicle usage per year.</label>
+          <select name="personal" required>
+              <option value="">--Choose--</option>
+              <option value="12">+15,000 miles.</option>
+              <option value="10">10,000-15,000.</option>
+              <option value="6">1,000 to 10,000.</option>
+              <option value="4">less than 1,000.</option>
+          </select>
+      </div>
+
+      <div>
+          <label>Public transportation usage per year.</label>
+          <select name="publicT" required>
+              <option value="">--Choose--</option>
+              <option value="12">+20,000 miles.</option>
+              <option value="10">15,000 to 20,000.</option>
+              <option value="6">10,000 to 15,000.</option>
+              <option value="4">1,000 to 10,000.</option>
+              <option value="2">less than 1,000.</option>
+          </select>
+      </div>
+      <div>
+          <label>Annual flights usage per year.</label>
+          <select name="flight" required>
+              <option value="">--Choose--</option>
+              <option value="2">Short distances in 1 year, such as within your state.</option>
+              <option value="6">Further distances, such as to a nearby state or country.</option>
+              <option value="20">Travel far, such as to another continent</option>
+          </select>
+      </div>
+  </fieldset>
+
+        <button type="submit">Submit</button>
+        <span id="submitError" class="error"> </span>
+      </fieldset>
+    </form>
+
+    <div id="tab-data"></div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where you going?</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js"></script>
+</head>
+
+<body>
+  <form id="vacationForm">
+    <fieldset>
+      <legend>Choose Your Next Vacation Destination</legend>
+      <div>
+        <label for="firstName">Full Name:</label>
+        <input type="text" name="firstname" id="firstName" required>
+        <span id="firstNameError" class="error"></span>
+      </div>
+      <div>
+        <label for="budget">Budget (+$1k or +$2k):</label>
+        <input type="number" name="budget" id="budget" min="1000" max="20500" required>
+      </div>
+      <div>
+        <label for="climate"><strong>Preferred Climate:</strong></label>
+        <select name="climate" id="climate" required>
+          <option value="">--Select--</option>
+          <option value="tropical">Tropical</option>
+          <option value="sunny">Sunny</option>
+          <option value="mountainous">Mountainous</option>
+          <option value="hiking climate">Hiking Climate</option>
+          <option value="cold">Cold</option>
+          <option value="snowy">Snowy</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="activities">Preferred Activities:</label>
+        <select name="activities" id="activities" required>
+          <option value="">--Select--</option>
+          <option value="sightseeing">Sightseeing</option>
+          <option value="day at the beach">Day at the beach</option>
+          <option value="skiing">Skiing</option>
+          <option value="hiking">Hiking</option>
+          <option value="northern lights">Northern Lights</option>
+        </select>
+      </div>
+      <button type="submit">Find Destinations</button>
+      <span id="submitError" class="error"></span>
+    </fieldset>
+  </form>
+
+  <table id="vacationTable" border="1"></table>
+
+  <tbody>
+    <tr>
+
+    </tr>
+  </tbody>
+  </table>
+  <div id="results"></div>
+</body>
+
+</html>
